@@ -18,7 +18,7 @@
 
     <!-- About phone screen, Extended version -->
     <string name="fluent_version">FluentOS version</string>
-    <string name="extended_version_default">Unknown</string>
+    <string name="fluent_version_default">Unknown</string>
     <string name="extensions_title">Extensions</string>
 
     <!-- AEX OTA -->
