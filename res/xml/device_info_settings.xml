@@ -93,11 +93,11 @@
                 android:summary="@string/device_info_default"/>
 
         <!-- Extended version -->
-        <Preference android:key="extended_version"
+        <Preference android:key="fluent_version"
                 android:enabled="false"
                 android:shouldDisableView="false"
-                android:title="@string/extended_version"
-                android:summary="@string/extended_version_default" />
+                android:title="@string/fluent_version"
+                android:summary="@string/fluent_version_default" />
 
         <!-- Device hardware processor -->
         <com.android.settings.DividerPreference

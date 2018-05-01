@@ -89,12 +89,12 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_AEX_ABOUT_INFO = "aex_about_info";
 
     private static final String KEY_AEX_OTA = "aex_ota";
-    private static final String KEY_EXTENDED_VERSION = "extended_version";
+    private static final String KEY_FLUENT_VERSION = "fluent_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_VENDOR_VERSION = "vendor_version";
     private static final String KEY_AEXOTA_PACKAGE_NAME = "org.aospextended.ota";
 
-    static final int TAPS_TO_BE_A_DEVELOPER = 7;
+    static final int TAPS_TO_BE_A_DEVELOPER = 123;
 
     long[] mHits = new long[3];
     int mDevHitCountdown;
@@ -153,7 +153,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_BUILD_NUMBER, Build.ID);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         // Remove AEXOTA if releasetype is not official
-        String buildtype = SystemProperties.get("ro.extended.releasetype","unofficial");
+        String buildtype = SystemProperties.get("ro.fluent.releasetype","unofficial");
         if (!buildtype.equalsIgnoreCase("official")) {
         removePreference(KEY_AEX_OTA);
         } else {
@@ -176,9 +176,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setValueSummary(KEY_MBN_VERSION, PROPERTY_MBN_VERSION);
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_MBN_VERSION,
                 PROPERTY_MBN_VERSION);
-        findPreference(KEY_EXTENDED_VERSION).setSummary(
-                android.os.Build.EXTENDED_DISPLAY_VERSION);
-        findPreference(KEY_EXTENDED_VERSION).setEnabled(true);
+        findPreference(KEY_FLUENT_VERSION).setSummary(
+                android.os.Build.FLUENT_DISPLAY_VERSION);
+        findPreference(KEY_FLUENT_VERSION).setEnabled(true);
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
 
 
@@ -345,12 +345,12 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         } else if (preference.getKey().equals(KEY_DEVICE_FEEDBACK)) {
             sendFeedback();
 
-        } else if (preference.getKey().equals(KEY_EXTENDED_VERSION)) {
+        } else if (preference.getKey().equals(KEY_FLUENT_VERSION)) {
             System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
             mHits[mHits.length-1] = SystemClock.uptimeMillis();
             if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
                 Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.putExtra("is_extended", true);
+                intent.putExtra("is_fluent", true);
                 intent.setClassName("android",
                         com.android.internal.app.PlatLogoActivity.class.getName());
                 try {
