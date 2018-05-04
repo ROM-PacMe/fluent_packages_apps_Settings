@@ -86,13 +86,13 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_MBN_VERSION = "persist.mbn.version";
     private static final String KEY_QGP_VERSION = "qgp_version";
     private static final String PROPERTY_QGP_VERSION = "persist.qgp.version";
-    private static final String KEY_AEX_ABOUT_INFO = "aex_about_info";
+    private static final String KEY_FLUENT_ABOUT_INFO = "fluent_about_info";
 
-    private static final String KEY_AEX_OTA = "aex_ota";
+    private static final String KEY_FLUENT_OTA = "fluent_ota";
     private static final String KEY_FLUENT_VERSION = "fluent_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_VENDOR_VERSION = "vendor_version";
-    private static final String KEY_AEXOTA_PACKAGE_NAME = "org.aospextended.ota";
+    private static final String KEY_FLUENTOTA_PACKAGE_NAME = "org.aospextended.ota";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 123;
 
@@ -101,7 +101,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     Toast mDevHitToast;
 
     private UserManager mUm;
-    private PreferenceScreen mAexOta;
+    private PreferenceScreen mFluentOta;
 
     private EnforcedAdmin mFunDisallowedAdmin;
     private boolean mFunDisallowedBySystem;
@@ -152,17 +152,17 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
         setStringSummary(KEY_BUILD_NUMBER, Build.ID);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
-        // Remove AEXOTA if releasetype is not official
+        // Remove FLUENTOTA if releasetype is not official
         String buildtype = SystemProperties.get("ro.fluent.releasetype","unofficial");
         if (!buildtype.equalsIgnoreCase("official")) {
-        removePreference(KEY_AEX_OTA);
+        removePreference(KEY_FLUENT_OTA);
         } else {
 
-        //If user uninstalls AEXOTA remove preference
-        // Remove AEXOTA if package is not found
-        mAexOta = (PreferenceScreen) findPreference(KEY_AEX_OTA);
-        if (!DuUtils.isPackageInstalled(getActivity(), KEY_AEXOTA_PACKAGE_NAME)) {
-            prefScreen.removePreference(mAexOta);
+        //If user uninstalls FLUENTOTA remove preference
+        // Remove FLUENTOTA if package is not found
+        mFluentOta = (PreferenceScreen) findPreference(KEY_FLUENT_OTA);
+        if (!DuUtils.isPackageInstalled(getActivity(), KEY_FLUENTOTA_PACKAGE_NAME)) {
+            prefScreen.removePreference(mFluentOta);
         }
 
   }
