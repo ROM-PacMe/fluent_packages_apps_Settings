@@ -17,17 +17,20 @@
     <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Maintainers -->
     <string-array name="maintainers_title" translatable="false">  
-        <item>ROM-PacMe</item>
+        <item>Rafael Pacheco (ROM-PacMe)</item>
+        <item>Rodrigo Polari (Polisher)</item>
    </string-array>
 
     <!-- Devices maintained by maintainer -->
     <string-array name="maintainers_devices" translatable="false">
         <item>Moto X 1st Gen (Ghost)</item> <!-- Maintainer: ROM-PacMe -->
+        <item>Samsung Galaxy J7 (2016)</item> <!-- Maintainer: Rodrigo Polari-->
     </string-array>
 
     <!-- XDA Profile URL of maintainer -->
     <string-array name="maintainers_url" translatable="false">   
-        <item>#</item> <!-- Maintainer: ROM-PacMe -->
+        <item>https://github.com/ROM-PacMe</item> <!-- Maintainer: ROM-PacMe -->
+        <item>https://github.com/Polisher</item> <!-- Maintainer: Rodrigo Polari-->
      </string-array>
 </resources>
 
