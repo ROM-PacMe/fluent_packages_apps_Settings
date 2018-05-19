@@ -90,6 +90,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
     private static final String KEY_FLUENT_OTA = "fluent_ota";
     private static final String KEY_FLUENT_VERSION = "fluent_version";
+    private static final String KEY_FLEX_SDK_VERSION = "flex_sdk_version"
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_VENDOR_VERSION = "vendor_version";
     private static final String KEY_FLUENTOTA_PACKAGE_NAME = "org.aospextended.ota";
@@ -178,6 +179,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 PROPERTY_MBN_VERSION);
         setValueSummary(KEY_FLUENT_VERSION, "ro.fluent.display.version");
         findPreference(KEY_FLUENT_VERSION).setEnabled(true);
+        setValueSummary(KEY_FLEX_SDK_VERSION, "ro.flex.fluent.sdk");
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
 
 

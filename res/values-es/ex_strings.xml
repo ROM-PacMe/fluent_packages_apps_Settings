@@ -17,12 +17,16 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- About phone screen, Extended version -->
-  <string name="extended_version">Versión de AOSP Extended</string>
-  <string name="extended_version_default">Desconocida</string>
+  <string name="fluent_version">Versión de FluentOS</string>
+  <string name="fluent_version_default">Desconocida</string>
   <string name="extensions_title">Extensiones</string>
   <!-- AEX OTA -->
-  <string name="aex_ota_title">Actualizaciones de AEX</string>
-  <string name="aex_ota_summary">Conseguir la última versión</string>
+  <string name="fluent_ota_title">Actualizaciones de Fluent</string>
+  <string name="fluent_ota_summary">Conseguir la última versión</string>
+  <!-- Flex SDK Version -->
+  <string name="flex_sdk_version">Version del SDK de estilos Flex</string>
+  <string name="flex_sdk_version_default">Indefinida.</string>
+
   <!-- About phone screen, build date -->
   <string name="build_date">Fecha de compilación</string>
   <string name="build_date_default">2015-01-01-0000</string>
