@@ -90,7 +90,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
     private static final String KEY_FLUENT_OTA = "fluent_ota";
     private static final String KEY_FLUENT_VERSION = "fluent_version";
-    private static final String KEY_FLEX_SDK_VERSION = "flex_sdk_version"
+    private static final String KEY_FLEX_SDK_VERSION = "flex_sdk_version";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
     private static final String KEY_VENDOR_VERSION = "vendor_version";
     private static final String KEY_FLUENTOTA_PACKAGE_NAME = "org.aospextended.ota";
